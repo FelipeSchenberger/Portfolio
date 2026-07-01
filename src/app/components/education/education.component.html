@@ -1,0 +1,33 @@
+<section class="section education" id="education">
+  <div class="container">
+    <h2 class="section-title reveal">{{ languageService.t().education.title }}</h2>
+    <p class="section-subtitle reveal">{{ languageService.t().education.subtitle }}</p>
+
+    <div class="education-grid">
+      @for (edu of education(); track edu.institution; let i = $index) {
+        <div class="education-card glass-card reveal" [style.transition-delay]="(i * 0.15) + 's'">
+          <div class="edu-icon">{{ edu.icon }}</div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3 class="edu-institution">{{ edu.institution }}</h3>
+              <div class="edu-meta">
+                <span class="edu-period">{{ edu.period }}</span>
+                @if (edu.current) {
+                  <span class="badge-current">{{ languageService.t().education.badgeCurrent }}</span>
+                }
+              </div>
+            </div>
+            <p class="edu-degree">{{ edu.degree }}</p>
+            <p class="edu-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              {{ edu.location }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

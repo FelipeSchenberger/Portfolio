@@ -1,0 +1,43 @@
+<section class="section experience" id="experience">
+  <div class="container">
+    <h2 class="section-title reveal">{{ languageService.t().experience.title }}</h2>
+    <p class="section-subtitle reveal">{{ languageService.t().experience.subtitle }}</p>
+
+    <div class="timeline">
+      @for (exp of experiences(); track exp.company; let i = $index) {
+        <div class="timeline-item reveal" [style.transition-delay]="(i * 0.15) + 's'">
+          <div class="timeline-marker">
+            <div class="marker-dot" [class.active]="exp.current"></div>
+            @if (i < experiences().length - 1) {
+              <div class="marker-line"></div>
+            }
+          </div>
+
+          <div class="timeline-content glass-card" appTilt [maxTilt]="8">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">{{ exp.company }}</h3>
+                <p class="timeline-role">{{ exp.role }}</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-period">{{ exp.period }}</span>
+                @if (exp.current) {
+                  <span class="badge-current">{{ languageService.t().experience.currentBadge }}</span>
+                }
+              </div>
+            </div>
+
+            <ul class="timeline-highlights">
+              @for (highlight of exp.highlights; track highlight) {
+                <li>
+                  <span class="highlight-bullet"></span>
+                  {{ highlight }}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

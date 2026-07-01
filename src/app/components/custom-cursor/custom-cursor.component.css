@@ -1,0 +1,57 @@
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  transform-origin: center center;
+  /* Hardware acceleration for smoother animations */
+  will-change: transform;
+}
+
+/* Main Dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-cyan);
+  /* Center the dot exactly on the cursor coordinates */
+  margin-top: -4px;
+  margin-left: -4px;
+  transition: background-color 0.2s ease, transform 0.1s;
+}
+
+.cursor-dot.hovering {
+  background-color: transparent;
+}
+
+/* Trailing Ring */
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid rgba(124, 58, 237, 0.5); /* Violet */
+  /* Center the ring exactly on the cursor coordinates */
+  margin-top: -15px;
+  margin-left: -15px;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.cursor-ring.hovering {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  background-color: rgba(6, 182, 212, 0.1); /* Cyan glow */
+  border-color: rgba(6, 182, 212, 0.8);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Hide custom cursor on mobile devices */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}

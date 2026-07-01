@@ -1,0 +1,14 @@
+@if (!isRemoved()) {
+  <div class="preloader-wrapper" [class.loaded]="isLoaded()">
+    <div class="preloader-content">
+      <div class="logo-container">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">FS</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+}

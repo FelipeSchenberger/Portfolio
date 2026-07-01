@@ -1,0 +1,46 @@
+<section class="hero" id="hero">
+
+  <div class="hero-content container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      {{ languageService.t().hero.badge }}
+    </div>
+
+    <h1 class="hero-title">
+      {{ languageService.t().hero.greeting }}
+      <span class="gradient-text">Felipe Schenberger</span>
+    </h1>
+
+    <p class="hero-subtitle">{{ languageService.t().hero.subtitle }}</p>
+
+    <p class="hero-description">
+      {{ languageService.t().hero.description }}
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">
+        <span>{{ languageService.t().hero.btnProjects }}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="#footer" class="btn-secondary">{{ languageService.t().hero.btnContact }}</a>
+    </div>
+
+    <div class="hero-tech-stack">
+      <span class="tech-label">{{ languageService.t().hero.techStack }}</span>
+      <div class="tech-icons">
+        <div class="tech-chip">Angular</div>
+        <div class="tech-chip">NestJS</div>
+        <div class="tech-chip">TypeScript</div>
+        <div class="tech-chip">PostgreSQL</div>
+        <div class="tech-chip">Docker</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
