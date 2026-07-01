@@ -30,6 +30,7 @@ export class LanguageService {
         description: 'Desarrollador Full Stack especializado en la creación de aplicaciones web escalables con el ecosistema TypeScript. Construyo soluciones robustas orientadas a resolver problemas complejos de negocio.',
         btnProjects: 'Ver Proyectos',
         btnContact: 'Contactarme',
+        btnResume: 'Ver CV',
         techStack: 'Tech Stack'
       },
       about: {
@@ -192,6 +193,7 @@ export class LanguageService {
         description: 'Full Stack Developer specialized in building scalable web applications with the TypeScript ecosystem. I build robust solutions aimed at solving complex business problems.',
         btnProjects: 'View Projects',
         btnContact: 'Contact Me',
+        btnResume: 'View Resume',
         techStack: 'Tech Stack'
       },
       about: {

@@ -17,14 +17,18 @@
       {{ languageService.t().hero.description }}
     </p>
 
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary">
-        <span>{{ languageService.t().hero.btnProjects }}</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
+    <div class="hero-cta reveal">
+      <a href="#projects" class="btn-primary">{{ languageService.t().hero.btnProjects }}</a>
+      <button (click)="openResumeModal()" class="btn-secondary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-      </a>
+        {{ languageService.t().hero.btnResume }}
+      </button>
       <a href="#footer" class="btn-secondary">{{ languageService.t().hero.btnContact }}</a>
     </div>
 
@@ -40,7 +44,14 @@
     </div>
   </div>
 
-  <div class="hero-scroll-indicator">
-    <div class="scroll-line"></div>
-  </div>
+
+
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
 </section>
+
+<!-- CV Preview Modal -->
+<app-resume-modal 
+  [isOpen]="isResumeModalOpen()" 
+  (close)="closeResumeModal()">
+</app-resume-modal>

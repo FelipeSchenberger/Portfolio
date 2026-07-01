@@ -190,26 +190,7 @@
   background: rgba(124, 58, 237, 0.08);
 }
 
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
 
-.scroll-line {
-  width: 2px;
-  height: 40px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-  animation: scroll-pulse 2s ease-in-out infinite;
-}
-
-@keyframes scroll-pulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
-  50% { opacity: 1; transform: scaleY(1); }
-}
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

@@ -1,3 +1,7 @@
+.projects {
+  padding-top: 40px; /* Reduced spacing between experience and projects */
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
