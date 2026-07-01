@@ -6,8 +6,6 @@
 
 Bienvenido al código fuente de mi portfolio personal. Una aplicación Single Page Application (SPA) ultra-rápida y bilingüe construida para exhibir mis proyectos, experiencia profesional y habilidades como Licenciado en Sistemas y Desarrollador Full Stack.
 
-🔗 **[Visitar el Portfolio en vivo](https://zxh.me)**
-
 ## ✨ Características Principales (Wow Factors)
 
 Este proyecto fue desarrollado poniendo un fuerte énfasis en el rendimiento, la accesibilidad y un diseño moderno (UI/UX):
