@@ -9,23 +9,21 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { EducationComponent } from './components/education/education.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
-import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    NavbarComponent,
-    HeroComponent,
-    AboutComponent,
-    ExperienceComponent,
-    ProjectsComponent,
-    SkillsComponent,
-    EducationComponent,
+    CommonModule, 
+    NavbarComponent, 
+    HeroComponent, 
+    AboutComponent, 
+    ExperienceComponent, 
+    ProjectsComponent, 
+    SkillsComponent, 
+    EducationComponent, 
     FooterComponent,
-    PreloaderComponent,
-    CustomCursorComponent
+    PreloaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

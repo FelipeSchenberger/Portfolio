@@ -1,18 +1,28 @@
 .hero {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 70px;
+  box-sizing: border-box;
 }
 
-.hero-content {
+.hero-container {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.hero-text-content {
+  text-align: left;
 }
 
 .hero-badge {
@@ -20,12 +30,12 @@
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.25);
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-violet);
+  color: var(--color-primary);
   margin-bottom: 32px;
   animation: fadeInDown 0.8s ease-out;
 }
@@ -33,7 +43,7 @@
 .badge-dot {
   width: 8px;
   height: 8px;
-  background: #22c55e;
+  background: #dc2626;
   border-radius: 50%;
   animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -44,18 +54,20 @@
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 20px;
   animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .hero-title .gradient-text {
   display: block;
-  font-size: 4.5rem;
-  background-size: 400% 400%;
-  animation: gradient-shift 2.5s ease-in-out infinite;
+  font-size: 5.5rem;
+  background-size: 250% 250%;
+  animation: gradient-shift 7s ease-in-out infinite;
+  text-transform: uppercase;
 }
 
 @keyframes gradient-shift {
@@ -77,7 +89,7 @@
   font-size: 1.05rem;
   color: var(--color-text-secondary);
   max-width: 580px;
-  margin: 0 auto 36px;
+  margin-bottom: 36px;
   line-height: 1.8;
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
@@ -85,9 +97,9 @@
 .hero-cta {
   display: flex;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  margin-bottom: 0;
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -118,7 +130,7 @@
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 12px 40px rgba(220, 38, 38, 0.35);
 }
 
 .btn-primary:hover::before {
@@ -148,46 +160,19 @@
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-violet);
-  background: rgba(124, 58, 237, 0.08);
+  border-color: var(--color-primary);
+  background: rgba(220, 38, 38, 0.08);
   transform: translateY(-2px);
 }
 
-.hero-tech-stack {
-  animation: fadeInUp 0.8s ease-out 0.5s both;
-}
-
-.tech-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--color-text-muted);
-  display: block;
-  margin-bottom: 14px;
-}
-
-.tech-icons {
+.hero-3d-content {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
   display: flex;
-  gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tech-chip {
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border);
-  border-radius: 50px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.tech-chip:hover {
-  border-color: var(--color-violet);
-  color: var(--color-text-primary);
-  background: rgba(124, 58, 237, 0.08);
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
 
@@ -203,25 +188,56 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100dvh;
+    padding-bottom: 50px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+    padding-top: 40px;
+  }
+  
+  .hero-text-content {
+    text-align: center;
+    order: 2; /* Put text below sphere */
+  }
+  
+  .hero-3d-content {
+    order: 1; /* Put sphere on top */
+    min-height: 300px;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .hero-title .gradient-text {
-    font-size: 2.8rem;
+    font-size: 4rem;
   }
   .hero-subtitle {
     font-size: 1.1rem;
   }
   .hero-description {
     font-size: 0.95rem;
+    margin: 0 auto 36px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
   .hero-title .gradient-text {
-    font-size: 2.2rem;
+    font-size: 3.2rem;
+  }
+  .hero-3d-content {
+    min-height: 250px;
   }
 }
